@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="controle-estoque">
+<head>
+<meta charset="UTF-8">
+<title>Controle de Estoque</title>
+	 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"  media="screen,projection"/>    
+    <link rel="stylesheet" href="/public/components/angular-material/angular-material.min.css"> 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+	<link rel="stylesheet" href="/public/css/app.css"></link>
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+	<div ng-include="'public/views/template/header.html'"></div>
+	<div ng-include="'public/views/template/menu.html'"></div>
+  	<div ui-view></div>
+	<div ng-include="'public/views/template/footer.html'"></div>
+
+
+
+	<script src="/public/components/angular/angular.min.js"></script>
+	<script src="/public/components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="/public/components/angular-animate/angular-animate.min.js"></script>
+	<script src="/public/components/angular-aria/angular-aria.min.js"></script>
+	<script src="/public/components/angular-messages/angular-messages.min.js"></script>
+	<script src="/public/components/angular-material/angular-material.min.js"></script>
+	<script src="/public/components/jquery/dist/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+	<script src="/public/js/app.js"></script>
+	
+	<script src="/public/views/template/js/index-controller.js"></script> 
+	<script src="/public/views/template/js/index.js"></script>
+	
+	
+	<script src="/public/views/pages/categoria/js/categoria-controller.js"></script> 
+	<script src="/public/views/pages/categoria/js/categoria-service.js"></script>
+	<script src="/public/views/pages/categoria/js/categoria.js"></script> 
+	
+	<script src="/public/views/pages/estoque/js/estoque-controller.js"></script> 
+	<script src="/public/views/pages/estoque/js/estoque-service.js"></script>
+	<script src="/public/views/pages/estoque/js/estoque.js"></script> 
+	
+	<script src="/public/views/pages/produto/js/produto-controller.js"></script> 
+	<script src="/public/views/pages/produto/js/produto-service.js"></script>
+	<script src="/public/views/pages/produto/js/produto.js"></script> 
+	
+	<script src="/public/views/pages/usuario/js/usuario-controller.js"></script> 
+	<script src="/public/views/pages/usuario/js/usuario-service.js"></script>
+	<script src="/public/views/pages/usuario/js/usuario.js"></script> 
+	
+	
+</body>
+</html>

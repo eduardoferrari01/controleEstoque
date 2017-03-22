@@ -1,0 +1,36 @@
+ <meta charset="UTF-8">
+<form  ng-submit="produtoCtrl.submit()">
+ 
+ <div class="row center-align">  
+			 <div class="row">
+			 <div class="col s12 m2"></div>
+		        <div class="col s12 m8">
+		          <div class="card">		        		        
+		            <div class="card-content">
+		            <div class="card-image">
+		            <h3>Produto</h3> 
+		            </div>	<br><br>		          
+					  <div class="row" >
+					  		<div class="input-field col s6">
+					          <input id="produto" type="text" ng-model="produtoCtrl.produto.descricao" class="validate">
+					          <label for="produto">Descrição</label>
+					        </div>
+					        <div class="input-field col s6">
+					        	<input id="produto" type="text" ng-model="produtoCtrl.produto.preco" class="validate">
+					        	<label for=produto>Preço </label>
+					        </div>
+					        </div>
+					         <br>
+					        <div class="row">					       
+					        <button class="btn blue-effect blue" type="submit" name="action">Salvar
+							    <i class="material-icons right">send</i>
+							  </button>
+		            </div>		            
+		          </div>
+		        </div>
+ 
+		 </div>
+		 </div>
+ </div>
+ </form>
+<br><br><br><br>
