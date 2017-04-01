@@ -32,7 +32,7 @@ app.controller('estoqueController', function($scope, estoqueService,
 	function listar() {
 
 		estoqueService.listar().then(function(t) {
-			self.listaEstoque = t;
+			self.listarEstoques = t;
 		}, function(errResponse) {
 
 		});

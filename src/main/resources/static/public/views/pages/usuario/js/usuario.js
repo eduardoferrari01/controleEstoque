@@ -3,21 +3,22 @@ app.config(['$stateProvider', '$httpProvider' , '$urlRouterProvider' , function(
 	$stateProvider
 	
 	.state('usuario',{
+		abstract : true,
 		url: '/usuario',
 		templateUrl:  '',
-		controller: 'usuarioController'
+		redirecto: 'usuario.listar'
 	})
-	.state('usuarioCadastrar',{
+	.state('usuario.cadastrar',{
 		url:'/cadastrar',
 		templateUrl: 'public/views/pages/usuario/usuario.form.html',
 		controller: 'usuarioController as usuarioCtrl'
 	})
-	.state('usuarioListar',{
+	.state('usuario.listar',{
 		url:'/lista',
 		templateUrl: 'public/views/pages/usuario/usuario.list.html',
 		controller: 'usuarioController as usuarioCtrl'
 	})
-	.state('usuarioEditar',{
+	.state('usuario.editar',{
 		url:'/idUsuario/editar',
 		templateUrl: 'public/views/pages/usuario/usuario.form.html',
 		controller: 'usuarioController as usuarioCtrl'

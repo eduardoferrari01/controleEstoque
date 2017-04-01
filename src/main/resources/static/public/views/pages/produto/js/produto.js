@@ -3,21 +3,22 @@ app.config(['$stateProvider', '$httpProvider' , '$urlRouterProvider' , function(
 	$stateProvider
 	
 	.state('produto',{
+		abstract : true,
 		url: '/produto',
 		templateUrl:  '',
-		controller: 'produtoController'
+		redirecto: 'produto.listar'
 	})
-	.state('produtoCadastrar',{
-		url:'/cadastrarProduto',
+	.state('produto.cadastrar',{
+		url:'/cadastrar',
 		templateUrl: 'public/views/pages/produto/produto.form.html',
 		controller: 'produtoController as produtoCtrl'
 	})
-	.state('produtoListar',{
+	.state('produto.listar',{
 		url:'/lista',
 		templateUrl: 'public/views/pages/produto/produto.list.html',
 		controller: 'produtoController as produtoCtrl'
 	})
-	.state('produtoEditar',{
+	.state('produto.editar',{
 		url:'/idProduto/editar',
 		templateUrl: 'public/views/pages/produto/produto.form.html',
 		controller: 'produtoController as produtoCtrl'

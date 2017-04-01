@@ -1,0 +1,40 @@
+ <meta charset="UTF-8">
+  <form>
+  <div class="row center-align">  
+			 <div class="row">
+			 <div class="col s12 m2"></div>
+		        <div class="col s12 m8">
+		          <div class="card">		        		        
+		            <div class="card-content">
+		            <div class="card-image">
+		            <h3>Produto</h3> 
+		            </div>	<br><br>
+		             <div class="row" ng-init="produtoCtrl.listar()">
+					        <div class="input-field col s6">
+					          <input id="busca" type="text" ng-model="busca" class="validate">
+					          <label for="busca">Buscar</label>
+					        </div>
+					     </div>
+				            <table >
+						        <thead>
+						          <tr>
+						              <th data-field="id">Descrição</th>
+						              <th data-field="id">Preço</th>
+						              <th data-field="id">Categoria</th>
+						          </tr>
+						        </thead>						
+						      	<tbody ng-repeat="produto in produtoCtrl.listarProdutos | filter : busca">
+						          <tr>
+						            <td>{{produto.descricao}}</td>
+						           <td>{{produto.preco}}</td>
+						           <td>{{produto.categoria}}</td>
+						           <td><button ui-sref="produtoEditar({idProduto : produto.id })"><i class="tiny material-icons">mode_edit</i></button></td>
+						          </tr>						          
+						        </tbody>
+						   </table>	            
+		         </div>
+        </div>
+     </div>
+  </div>
+</div>
+</form>

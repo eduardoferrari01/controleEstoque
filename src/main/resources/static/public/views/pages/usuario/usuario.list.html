@@ -1,0 +1,40 @@
+ <meta charset="UTF-8">
+  <form>
+  <div class="row center-align">  
+			 <div class="row">
+			 <div class="col s12 m2"></div>
+		        <div class="col s12 m8">
+		          <div class="card">		        		        
+		            <div class="card-content">
+		            <div class="card-image">
+		            <h3>Usuário</h3> 
+		            </div>	<br><br>
+		             <div class="row" ng-init="usuarioCtrl.listar()">
+					        <div class="input-field col s6">
+					          <input id="busca" type="text" ng-model="busca" class="validate">
+					          <label for="busca">Buscar</label>
+					        </div>
+					     </div>
+				            <table >
+						        <thead>
+						          <tr>
+						              <th data-field="id">Nome</th>
+						              <th data-field="id">Login</th>
+						              <th data-field="id">E-mail</th>
+						          </tr>
+						        </thead>						
+						      	<tbody ng-repeat="usuario in usuarioCtrl.listarUsuarios | filter : busca">
+						          <tr>
+						            <td>{{usuario.nome}}</td>
+						            <td>{{usuario.login}}</td>
+						            <td>{{usuario.email}}</td>
+						           <td><button ui-sref="usuarioEditar({idUsuario : usuario.id })"><i class="tiny material-icons">mode_edit</i></button></td>
+						          </tr>						          
+						        </tbody>
+						   </table>	            
+		         </div>
+        </div>
+     </div>
+  </div>
+</div>
+</form>

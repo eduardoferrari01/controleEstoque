@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+<form  ng-submit="usuarioCtrl.submit()">
+  <div class="row center-align">  
+			 <div class="row">
+			 <div class="col s12 m2"></div>
+		        <div class="col s12 m8">
+		          <div class="card">		        		        
+		            <div class="card-content">
+		            <div class="card-image">
+		            <h3>Usuário</h3> 
+		            </div>	<br><br>		          
+					  <div class="row" >
+					  		<div class="input-field col s6">
+					          <input id="usuario" type="text" ng-model="usuarioCtrl.usuario.nome" class="validate">
+					          <label for="usuario">Nome:</label>
+					        </div>
+					        <div class="input-field col s6">
+					          
+					          <input id="usuario" type="text" ng-model="usuarioCtrl.usuario.login" class="validate">
+					          <label for="usuario">Login</label>
+					        </div>  
+					         <div class="input-field col s6">
+					         
+					          <input id="usuario" type="text" ng-model="usuarioCtrl.usuario.email" class="validate">
+					          <label for="usuario">E-mail</label>
+					        </div>
+					        <div class="input-field col s6">
+					        	
+					          <input id="usuario" type="password" ng-model="usuarioCtrl.usuario.senha" class="validate">
+					          <label for="usuario">Senha</label>
+					        </div>
+					        </div>
+					         <br>
+					        <div class="row">					       
+					        <button class="btn blue-effect blue" type="submit" name="action">Salvar
+							    <i class="material-icons right">send</i>
+							  </button>
+		            </div>		            
+		          </div>
+		        </div>
+ 
+		 </div>
+		 </div>
+ </div>
+ </form>
+<br><br><br><br>

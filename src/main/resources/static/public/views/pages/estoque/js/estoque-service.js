@@ -2,7 +2,7 @@ app.factory('estoqueService', function($rootScope, $http, $q) {
 
 	return {
 		salvar : function(estoque) {
-			console.log(estoque);
+			
 			return $http.post('rest/estoque', estoque).then(function(response) {
 				return response.data;
 			}, function(errResponse) {

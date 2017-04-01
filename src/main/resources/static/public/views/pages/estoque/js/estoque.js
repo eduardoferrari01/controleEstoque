@@ -3,21 +3,22 @@ app.config(['$stateProvider', '$httpProvider' , '$urlRouterProvider' , function(
 	$stateProvider
 	
 	.state('estoque',{
+		abstract : true,
 		url: '/estoque',
-		templateUrl:  '',
-		controller: 'estoqueController'
+		templateUrl: 'public/views/pages/estoque/estoque.index.html',
+		redirecto: 'estoque.listar'
 	})
-	.state('estoqueCadastrar',{
-		url:'/cadastrarEstoque',
+	.state('estoque.cadastrar',{
+		url:'/cadastrar',
 		templateUrl: 'public/views/pages/estoque/estoque.form.html',
 		controller: 'estoqueController as estoqueCtrl'
 	})
-	.state('estoqueListar',{
+	.state('estoque.listar',{
 		url:'/lista',
 		templateUrl: 'public/views/pages/estoque/estoque.list.html',
 		controller: 'estoqueController as estoqueCtrl'
 	})
-	.state('estoqueEditar',{
+	.state('estoque.editar',{
 		url:'/idEstoque/editar',
 		templateUrl: 'public/views/pages/estoque/estoque.form.html',
 		controller: 'estoqueController as estoqueCtrl'

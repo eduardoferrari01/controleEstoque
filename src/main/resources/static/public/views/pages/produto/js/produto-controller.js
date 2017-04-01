@@ -32,7 +32,7 @@ app.controller('produtoController', function($scope, produtoService,
 	function listar() {
 
 		produtoService.listar().then(function(t) {
-			self.listaProduto = t;
+			self.listarProdutos = t;
 		}, function(errResponse) {
 
 		});

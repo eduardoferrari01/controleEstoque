@@ -6,7 +6,7 @@ app.config(['$stateProvider', '$httpProvider' , '$urlRouterProvider' , function(
 		abstract : true,
 		url: '/categoria',
 	      templateUrl: 'public/views/pages/categoria/categoria.index.html',
-	      controller: 'categoriaController'
+	      redirecto: 'categoria.listar'
 	    })
 	    
 	     .state('categoria.cadastrar', {
