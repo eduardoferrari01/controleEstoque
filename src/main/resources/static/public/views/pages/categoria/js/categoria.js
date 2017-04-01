@@ -3,24 +3,25 @@ app.config(['$stateProvider', '$httpProvider' , '$urlRouterProvider' , function(
 	$stateProvider
 	
 	.state('categoria', {
-	      url: '/categoria',
+		abstract : true,
+		url: '/categoria',
 	      templateUrl: 'public/views/pages/categoria/categoria.index.html',
 	      controller: 'categoriaController'
 	    })
 	    
-	     .state('categoriaCadastrar', {
+	     .state('categoria.cadastrar', {
 	      url: '/cadastrar',
 	      templateUrl: 'public/views/pages/categoria/categoria.form.html',
 	      controller: 'categoriaController as categoriaCtrl'
 	    })
 	    
-	     .state('categoriaListar', {
+	     .state('categoria.listar', {
 	      url: '/lista',
 	      templateUrl: 'public/views/pages/categoria/categoria.list.html',
 	      controller: 'categoriaController as categoriaCtrl'
 	    })
 	    
-	    .state('categoriaEditar', {
+	    .state('categoria.editar', {
 	      url: '/:idCategoria/editar',
 	      templateUrl: 'public/views/pages/categoria/categoria.form.html',
 	      controller: 'categoriaController as categoriaCtrl'

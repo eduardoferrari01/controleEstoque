@@ -11,7 +11,7 @@ app.factory('categoriaService', function($rootScope, $http,$q){
 				});
 		},
 		listar: function(){
-			console.log("OK LISTA");
+			
 			return $http.get('rest/categoria')
 			.then(function(response){
 				return response.data;

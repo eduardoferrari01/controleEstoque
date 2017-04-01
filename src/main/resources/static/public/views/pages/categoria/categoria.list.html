@@ -9,7 +9,7 @@
 		            <div class="card-image">
 		            <h3>Categoria</h3> 
 		            </div>	<br><br>
-		             <div class="row">
+		             <div class="row" ng-init="categoriaCtrl.listar()">
 					        <div class="input-field col s6">
 					          <input id="busca" type="text" ng-model="busca" class="validate">
 					          <label for="busca">Buscar</label>
@@ -19,14 +19,12 @@
 						        <thead>
 						          <tr>
 						              <th data-field="id">Descrição</th>
-						              <th data-field="name">Tipo</th>
 						          </tr>
 						        </thead>						
-						        <tbody ng-repeat="categoria in categoriaCtrl.listarCategorias | filter : busca">
+						      	<tbody ng-repeat="categoria in categoriaCtrl.listarCategorias | filter : busca">
 						          <tr>
 						            <td>{{categoria.descricao}}</td>
-						            <td>{{categoria.tipo}}</td>
-						            <td><button ui-sref="categoriaEditar({idCategoria : categoria.id })"><i class="tiny material-icons">mode_edit</i></button></td>
+						           <td><button ui-sref="categoriaEditar({idCategoria : categoria.id })"><i class="tiny material-icons">mode_edit</i></button></td>
 						          </tr>						          
 						        </tbody>
 						   </table>	            
