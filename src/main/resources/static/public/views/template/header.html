@@ -1,15 +1,28 @@
 <meta charset="UTF-8">
 <div class="navbar-fixed">
 	 <nav>
-        <div class="nav-wrapper  blue lighten-1" ng-controller="IndexController">
+       <!--  <div class="nav-wrapper  blue lighten-1" ng-controller="IndexController">
        <div class="col s2" ><a ui-sref="home" class="brand-logo center">Controle de Estoque</a></div>
       	<a href="#" data-activates="mobile-menu" ng-click="toggleSidenav('left')" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
+      </ul> -->
+    
+    <div class="nav-wrapper blue lighten-1" ng-controller="IndexController" >
+       <a ui-sref="home" class="brand-logo center">Logo2</a>
+      <ul class="left hide-on-med-and-down">
+        <li><a ui-sref ="categoria">Categoria</a></li>
+        <li><a ui-sref ="produto">Produto</a></li>
+        <li class="usuario"><a ui-sref="usuario">Usuário</a></li>
       </ul>
     </div>
+    
+    </div>
+   
   </nav>
   
 
 
    
 </div>
+
+

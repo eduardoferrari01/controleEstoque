@@ -11,16 +11,24 @@
 		            </div>	<br><br>		          
 					  <div class="row" >
 					  		
-						 <div class="input-field col s6">
-						  <select class="browser-default" ng-model="estoqueCtrl.produto" 
-							ng-options="produto.descricao for produto in produtoCtrl.lista()"  >
+						 <div class="input-field col s6" ng-controller="produtoController as produtoCtrl" ng-init="produtoCtrl.listar()">
+						  <select class="browser-default" ng-model="estoqueCtrl.estoque.produto" 
+								ng-options="produto.descricao for produto in produtoCtrl.listarProdutos"  >
 								<option value="">{{produtoCtrl.produto.descricao}}</option>
 							</select>
 							</div>
-					  		
-					  		
-					  		
-					  		<div class="input-field col s6">
+						
+						
+						
+						<div class="input-field col s6"  ng-controller="categoriaController as categoriaCtrl"  ng-init="categoriaCtrl.listar()">
+						  <select class="browser-default" ng-model="produtoCtrl.produto.categoria" 
+								ng-options="categoria.descricao for categoria in categoriaCtrl.listarCategorias"  >
+								<option value="">{{categorias.descricao}}</option>
+							</select>
+							</div>
+						
+						
+						<div class="input-field col s6">
 					          <input id="estoque" type="text" ng-model="estoqueCtrl.estoque.quantidade" class="validate">
 					          <label for="estoque">Quantidade</label>
 					        </div>

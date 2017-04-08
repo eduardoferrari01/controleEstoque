@@ -15,13 +15,13 @@
 					          <label for="busca">Buscar</label>
 					        </div>
 					     </div>
-				            <table >
+				            <table class="highlight bordered">
 						        <thead>
 						          <tr>
 						              <th data-field="id">Produto</th>
-						              <th data-field="id">Localização</th>
 						              <th data-field="id">Quantidade</th>
-						              <th data-field="id">Valor Total</th>
+						              <th data-field="id">Localização</th>
+						            	<th data-field="id">Valor Total</th>
 						          </tr>
 						        </thead>						
 						      	<tbody ng-repeat="estoque in estoqueCtrl.listarEstoques | filter : busca">

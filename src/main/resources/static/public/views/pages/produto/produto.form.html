@@ -20,9 +20,9 @@
 					        	<label for=produto>Preço </label>
 					        </div>
 					        
-					       <div class="input-field col s6">
+					       <div class="input-field col s6"  ng-controller="categoriaController as categoriaCtrl"  ng-init="categoriaCtrl.listar()">
 						  <select class="browser-default" ng-model="produtoCtrl.produto.categoria" 
-							ng-options="categoria.descricao for categoria in categoriaCtrl.listar"  >
+								ng-options="categoria.descricao for categoria in categoriaCtrl.listarCategorias"  >
 								<option value="">{{categorias.descricao}}</option>
 							</select>
 							</div>
@@ -41,4 +41,3 @@
 		 </div>
  </div>
  </form>
-<br><br><br><br>

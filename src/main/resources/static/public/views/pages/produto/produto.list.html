@@ -15,7 +15,7 @@
 					          <label for="busca">Buscar</label>
 					        </div>
 					     </div>
-				            <table >
+				             <table class="highlight bordered">
 						        <thead>
 						          <tr>
 						              <th data-field="id">Descrição</th>
@@ -27,7 +27,7 @@
 						          <tr>
 						            <td>{{produto.descricao}}</td>
 						           <td>{{produto.preco}}</td>
-						           <td>{{produto.categoria}}</td>
+						           <td>{{produto.categoria.descricao}}</td>
 						           <td><button ui-sref="produtoEditar({idProduto : produto.id })"><i class="tiny material-icons">mode_edit</i></button></td>
 						          </tr>						          
 						        </tbody>
