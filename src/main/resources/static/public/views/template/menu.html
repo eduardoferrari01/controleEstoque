@@ -1,28 +1,24 @@
 <meta charset="UTF-8">
 
 <div layout="row" flex class="change-my-css">
-<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" >
+	<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2"
+		md-component-id="left">
 
-<button ng-click="toggleSidenav('left')"  class="menuBtn" aria-label="Toggle Menu"></button>
-	<div>Menu de Navegação</div>
-     
-      <li><div class="userView center-align">
-       <div class="background brown darken-4">
-       
-      </div>
-      </div></li>
-      <div class="row">
-	      <a href="#!name"><span class=" name">Eduardo Ferrari</span></a>
-	      <a href="#!email"><span class=" email">eduardo@smcaetano.com.br</span></a>
-      </div>
-    
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+	<button ng-click="toggleSidenav('left')" class="menuBtn"
+		aria-label="Toggle Menu"></button>
+	<div class="row"></div>	
+	<div class="row"></div>
+	<h6>Produtos</h6>
+	<ul class="collection">
+		<li><a href="" class="collection-item" ui-sref="produto.cadastrar">Cadastrar</a></li>
+		<li><a href="" class="collection-item" ui-sref="produto.listar">Consultar</a></li>
+	</ul>
+	<h6>Categorias</h6>
+	<ul class="collection">
+		<li><a href="" class="collection-item" ui-sref="categoria.cadastrar">Cadastrar</a></li>
+		<li><a href="" class="collection-item" ui-sref="categoria.listar">Consultar</a></li>
+	</ul>
 
-      
-     
-</md-sidenav>
+	</md-sidenav>
 </div>
+

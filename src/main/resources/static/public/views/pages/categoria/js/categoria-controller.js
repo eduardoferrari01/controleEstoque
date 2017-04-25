@@ -32,7 +32,6 @@ app.controller('categoriaController', function($scope, categoriaService, $stateP
 	 
 	 
 	 function listar(){
-		 console.log("ok chamou submit");
 		 categoriaService.listar().
 			then(function(t){
 				self.listarCategorias = t;

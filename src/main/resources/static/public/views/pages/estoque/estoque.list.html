@@ -1,9 +1,6 @@
  <meta charset="UTF-8">
   <form>
   <div class="row center-align">  
-			 <div class="row">
-			 <div class="col s12 m2"></div>
-		        <div class="col s12 m8">
 		          <div class="card">		        		        
 		            <div class="card-content">
 		            <div class="card-image">
@@ -30,13 +27,11 @@
 						            <td>{{estoque.quantidade}}</td>
 						            <td>{{estoque.localizacao}}</td>
 						           	<td>{{estoque.valorTotal}}</td>
-						           <td><button ui-sref="estoqueEditar({idEstoque : estoque.id })"><i class="tiny material-icons">mode_edit</i></button></td>
+						           <td><button ui-sref="estoque.editar({idEstoque : estoque.id })"><i class="tiny material-icons">mode_edit</i></button></td>
 						          </tr>						          
 						        </tbody>
 						   </table>	            
 		         </div>
         </div>
      </div>
-  </div>
-</div>
 </form>

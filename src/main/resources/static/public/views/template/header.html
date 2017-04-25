@@ -1,19 +1,16 @@
 <meta charset="UTF-8">
 <div class="navbar-fixed">
-	 <nav>
-       <!--  <div class="nav-wrapper  blue lighten-1" ng-controller="IndexController">
-       <div class="col s2" ><a ui-sref="home" class="brand-logo center">Controle de Estoque</a></div>
-      	<a href="#" data-activates="mobile-menu" ng-click="toggleSidenav('left')" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-      </ul> -->
-    
+	 <nav>         
+ 
     <div class="nav-wrapper blue lighten-1" ng-controller="IndexController" >
-       <a ui-sref="home" class="brand-logo center">Logo2</a>
+       
       <ul class="left hide-on-med-and-down">
-        <li><a ui-sref ="categoria">Categoria</a></li>
-        <li><a ui-sref ="produto">Produto</a></li>
-        <li class="usuario"><a ui-sref="usuario">Usuário</a></li>
+      <li><a  ng-click="toggleSidenav('left')"><i class="material-icons">menu</i></a></li>
+        <li><a ui-sref ="categoria.cadastrar">Categoria</a></li>
+        <li><a ui-sref ="produto.cadastrar">Produto</a></li>  
+        <li><a ui-sref ="estoque.cadastrar">Estoque</a></li>         
       </ul>
+      <a ui-sref="home" class="brand-logo center">Controle de Estoque</a>
     </div>
     
     </div>

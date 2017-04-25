@@ -19,7 +19,7 @@ app.config(['$stateProvider', '$httpProvider' , '$urlRouterProvider' , function(
 		controller: 'estoqueController as estoqueCtrl'
 	})
 	.state('estoque.editar',{
-		url:'/idEstoque/editar',
+		url:'/:idEstoque/editar',
 		templateUrl: 'public/views/pages/estoque/estoque.form.html',
 		controller: 'estoqueController as estoqueCtrl'
 	})

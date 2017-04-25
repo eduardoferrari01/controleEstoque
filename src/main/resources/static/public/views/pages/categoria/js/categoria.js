@@ -15,15 +15,17 @@ app.config(['$stateProvider', '$httpProvider' , '$urlRouterProvider' , function(
 	      controller: 'categoriaController as categoriaCtrl'
 	    })
 	    
+	    .state('categoria.editar', {
+	      url: '/:idCategoria/editar',
+	      templateUrl: 'public/views/pages/categoria/categoria.form.html',
+	      controller: 'categoriaController as categoriaCtrl'
+	    })
+	    
 	     .state('categoria.listar', {
 	      url: '/lista',
 	      templateUrl: 'public/views/pages/categoria/categoria.list.html',
 	      controller: 'categoriaController as categoriaCtrl'
 	    })
 	    
-	    .state('categoria.editar', {
-	      url: '/:idCategoria/editar',
-	      templateUrl: 'public/views/pages/categoria/categoria.form.html',
-	      controller: 'categoriaController as categoriaCtrl'
-	})
+	    
 }]);

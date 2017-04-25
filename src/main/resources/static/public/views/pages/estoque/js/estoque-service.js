@@ -21,8 +21,10 @@ app.factory('estoqueService', function($rootScope, $http, $q) {
 		buscarPorId : function(param) {
 			return $http.get('rest/estoque/' + param).then(function(response) {
 				return response.data;
+				console.log(response.data);
 			}, function(errResponse) {
 				return $q.reject(errResponse);
+				console.log('nada');
 			});
 		},
 

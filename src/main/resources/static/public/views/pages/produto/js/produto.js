@@ -5,7 +5,7 @@ app.config(['$stateProvider', '$httpProvider' , '$urlRouterProvider' , function(
 	.state('produto',{
 		abstract : true,
 		url: '/produto',
-		templateUrl:  '',
+		templateUrl:  'public/views/pages/produto/produto.index.html',
 		redirecto: 'produto.listar'
 	})
 	.state('produto.cadastrar',{
@@ -19,7 +19,7 @@ app.config(['$stateProvider', '$httpProvider' , '$urlRouterProvider' , function(
 		controller: 'produtoController as produtoCtrl'
 	})
 	.state('produto.editar',{
-		url:'/idProduto/editar',
+		url:'/:idProduto/editar',
 		templateUrl: 'public/views/pages/produto/produto.form.html',
 		controller: 'produtoController as produtoCtrl'
 	})

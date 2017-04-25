@@ -1,9 +1,6 @@
 <meta charset="UTF-8">
 <form  ng-submit="estoqueCtrl.submit()">
   <div class="row center-align">  
-			 <div class="row">
-			 <div class="col s12 m2"></div>
-		        <div class="col s12 m8">
 		          <div class="card">		        		        
 		            <div class="card-content">
 		            <div class="card-image">
@@ -14,16 +11,16 @@
 						 <div class="input-field col s6" ng-controller="produtoController as produtoCtrl" ng-init="produtoCtrl.listar()">
 						  <select class="browser-default" ng-model="estoqueCtrl.estoque.produto" 
 								ng-options="produto.descricao for produto in produtoCtrl.listarProdutos"  >
-								<option value="">{{produtoCtrl.produto.descricao}}</option>
+								<option value="">{{estoqueCtrl.estoque.produto.descricao}}</option>
 							</select>
 							</div>
 						
 						
 						
 						<div class="input-field col s6"  ng-controller="categoriaController as categoriaCtrl"  ng-init="categoriaCtrl.listar()">
-						  <select class="browser-default" ng-model="produtoCtrl.produto.categoria" 
+						  <select class="browser-default" ng-model="estoqueCtrl.estoque.categoria" 
 								ng-options="categoria.descricao for categoria in categoriaCtrl.listarCategorias"  >
-								<option value="">{{categorias.descricao}}</option>
+								<option value="">{{estoqueCtrl.estoque.categoria.descricao}}</option>
 							</select>
 							</div>
 						
@@ -50,8 +47,6 @@
 		          </div>
 		        </div>
  
-		 </div>
-		 </div>
- </div>
+		 </div>		
  </form>
 <br><br><br><br>
