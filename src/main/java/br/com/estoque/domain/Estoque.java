@@ -14,7 +14,6 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Table(name = "estoque")
 public class Estoque extends AbstractPersistable<Long> {
 
-	@NotBlank
 	@Min(1)
 	private Integer quantidade;
 	@NotBlank(message = "localizacao empty! 222")
