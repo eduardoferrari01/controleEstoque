@@ -5,13 +5,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 @Table(name = "produto")
 public class Produto extends AbstractPersistable<Long>{
 
+	@NotBlank
 	private String descricao;
+	@NotBlank
 	private Double preco;
 	
 	@ManyToOne

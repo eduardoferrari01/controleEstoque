@@ -11,8 +11,8 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Table(name = "categoria")
 public class Categoria extends AbstractPersistable<Long>{
 
-	@NotEmpty(message = "OK TESTE")
-	@NotNull(message = "NAO PODE SER NULL")
+	@NotEmpty
+	@NotNull
 	private String descricao;
 	
 	public String getDescricao() {

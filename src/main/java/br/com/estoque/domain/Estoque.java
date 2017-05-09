@@ -4,17 +4,23 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
+
 
 @Entity
 @Table(name = "estoque")
 public class Estoque extends AbstractPersistable<Long> {
 
+	@NotBlank
+	@Min(1)
 	private Integer quantidade;
+	@NotBlank(message = "localizacao empty! 222")
 	private String localizacao;
 	@ManyToOne
-	@JoinColumn(name = "id_produto")
+	@JoinColumn(name = "id_produto",unique = true)
 	private Produto produto;
 	
 	private Double valorTotal ;

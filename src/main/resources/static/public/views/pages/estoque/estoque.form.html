@@ -15,16 +15,6 @@
 							</select>
 							</div>
 						
-						
-						
-						<div class="input-field col s6"  ng-controller="categoriaController as categoriaCtrl"  ng-init="categoriaCtrl.listar()">
-						  <select class="browser-default" ng-model="estoqueCtrl.estoque.categoria" 
-								ng-options="categoria.descricao for categoria in categoriaCtrl.listarCategorias"  >
-								<option value="">{{estoqueCtrl.estoque.categoria.descricao}}</option>
-							</select>
-							</div>
-						
-						
 						<div class="input-field col s6">
 					          <input id="estoque" type="text" ng-model="estoqueCtrl.estoque.quantidade" class="validate">
 					          <label for="estoque">Quantidade</label>
