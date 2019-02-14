@@ -1,1 +1,0 @@
-var app = angular.module('controle-estoque',['ngAnimate','ngMaterial', 'ui.router']);
