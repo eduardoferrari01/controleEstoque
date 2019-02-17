@@ -1,7 +1,6 @@
 package br.com.estoque.web.controller;
 
-import java.util.Collection;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import br.com.estoque.domain.Estoque;
 import br.com.estoque.service.EstoqueService;
 
@@ -23,36 +21,41 @@ import br.com.estoque.service.EstoqueService;
 @RequestMapping("/rest/estoque")
 public class EstoqueRestController {
 
-	@Autowired
-	private EstoqueService estoqueService;
-	
-	@PostMapping
-	public ResponseEntity<Estoque> salvar(@RequestBody Estoque estoque,UriComponentsBuilder ucBuilder)
-	{
-		
-		estoqueService.salvarOuEditar(estoque);
-		return new ResponseEntity<Estoque>(HttpStatus.CREATED);
-	}
-	@PutMapping
-	public ResponseEntity<Estoque> editar(@RequestBody Estoque estoque,UriComponentsBuilder ucBuilder)
-	{
-		estoqueService.salvarOuEditar(estoque);
-		return new ResponseEntity<Estoque>(HttpStatus.CREATED);
-	}
-	@GetMapping
-	public ResponseEntity<Collection<Estoque>> buscarTodos(){
-	
-		return new ResponseEntity<Collection<Estoque>>(estoqueService.buscarTodos(),HttpStatus.OK);
-	}
-	@GetMapping("/{id}")
-	public ResponseEntity<Estoque> buscarPorId(@PathVariable Long id)
-	{
-		return new ResponseEntity<Estoque>(estoqueService.buscarPorId(id),HttpStatus.OK);
-	}
-	@DeleteMapping
-	public ResponseEntity<Estoque> deletar(Long id)
-	{
-		estoqueService.excluir(id);
-		return new ResponseEntity<Estoque>(HttpStatus.BAD_REQUEST);
-	}
+  @Autowired
+  private EstoqueService estoqueService;
+
+  @ResponseStatus(HttpStatus.CREATED)
+  @PostMapping
+  public ResponseEntity<Estoque> salvar(@RequestBody Estoque estoque,
+      UriComponentsBuilder ucBuilder) {
+
+    estoqueService.salvarOuEditar(estoque);
+    return new ResponseEntity<Estoque>(HttpStatus.CREATED);
+  }
+
+  @ResponseStatus(HttpStatus.CREATED)
+  @PutMapping
+  public void editar(@RequestBody Estoque estoque) {
+    estoqueService.salvarOuEditar(estoque);
+
+  }
+
+  @ResponseStatus(HttpStatus.OK)
+  @GetMapping
+  public List<Estoque> buscarTodos() {
+
+    return estoqueService.buscarTodos();
+  }
+
+  @ResponseStatus(HttpStatus.OK)
+  @GetMapping("/{id}")
+  public Estoque buscarPorId(@PathVariable Long id) {
+    return estoqueService.buscarPorId(id);
+  }
+
+  @DeleteMapping
+  public void deletar(Long id) {
+    estoqueService.excluir(id);
+
+  }
 }
