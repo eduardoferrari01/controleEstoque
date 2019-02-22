@@ -1,46 +1,34 @@
 package br.com.estoque.domain;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
+import lombok.Data;
 
-import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.data.jpa.domain.AbstractPersistable;
-
+@Data
 @Entity
+@SequenceGenerator(name = "produto_id_seq", sequenceName = "produto_id_seq", allocationSize = 1)
 @Table(name = "produto")
-public class Produto extends AbstractPersistable<Long>{
+public class Produto implements Serializable {
 
-	@NotBlank
-	private String descricao;
-	@Min(1)
-	private Double preco;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_categoria")
-	private Categoria categoria;
-	
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	public Double getPreco() {
-		return preco;
-	}
-	public void setPreco(Double preco) {
-		this.preco = preco;
-	}
-	public Categoria getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-	
-	
-	
+  private static final long serialVersionUID = -4280341935600596146L;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "produto_id_seq")
+  private Long id;
+  private String descricao;
+  @Min(1)
+  private Double preco;
+
+  @ManyToOne
+  @JoinColumn(name = "id_categoria")
+  private Categoria categoria;
+
 }
