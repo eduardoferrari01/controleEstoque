@@ -1,0 +1,2 @@
+# controleEstoque
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/673f006672364c578d1a9c1822281e1e)](https://app.codacy.com/app/eduardo.gf/controleEstoque?utm_source=github.com&utm_medium=referral&utm_content=eduardoferrari01/controleEstoque&utm_campaign=Badge_Grade_Dashboard)
