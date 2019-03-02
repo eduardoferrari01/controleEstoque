@@ -7,31 +7,29 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import br.com.estoque.domain.Produto;
 import br.com.estoque.repository.ProdutoRepository;
+import br.com.estoque.service.interfaces.CrudService;
 
 @Service
 @Transactional(readOnly = true, propagation = Propagation.REQUIRED)
-public class ProdutoService {
+public class ProdutoService implements CrudService<Produto> {
 
   @Autowired
   private ProdutoRepository produtoRepository;
 
-  @Transactional(readOnly = false)
-  public void salvarOuEditar(Produto produto) {
+  public void save(Produto produto) {
     produtoRepository.save(produto);
   }
 
-  @Transactional(readOnly = false)
-  public void excluir(Long id) {
-    Produto produto = produtoRepository.findById(id).get();
-    produtoRepository.delete(produto);
-  }
-
-  public List<Produto> buscarTodos() {
+  public List<Produto> findAll() {
     return produtoRepository.findAll();
   }
 
-  public Produto buscarPorId(Long id) {
+  public Produto findById(Long id) {
     return produtoRepository.findById(id).orElse(new Produto());
   }
 
+  public void delete(Long id) {
+    Produto produto = produtoRepository.findById(id).get();
+    produtoRepository.delete(produto);
+  }
 }

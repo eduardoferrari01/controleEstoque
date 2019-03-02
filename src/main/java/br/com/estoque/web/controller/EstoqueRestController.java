@@ -2,60 +2,43 @@ package br.com.estoque.web.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.util.UriComponentsBuilder;
 import br.com.estoque.domain.Estoque;
 import br.com.estoque.service.EstoqueService;
+import br.com.estoque.web.controller.api.EstoqueApi;
 
 @RestController
 @RequestMapping("/rest/estoque")
-public class EstoqueRestController {
+public class EstoqueRestController implements EstoqueApi {
 
   @Autowired
   private EstoqueService estoqueService;
 
-  @ResponseStatus(HttpStatus.CREATED)
-  @PostMapping
-  public ResponseEntity<Estoque> salvar(@RequestBody Estoque estoque,
-      UriComponentsBuilder ucBuilder) {
+  public void save(@RequestBody Estoque estoque) {
 
-    estoqueService.salvarOuEditar(estoque);
-    return new ResponseEntity<Estoque>(HttpStatus.CREATED);
+    estoqueService.save(estoque);
   }
 
-  @ResponseStatus(HttpStatus.CREATED)
-  @PutMapping
-  public void editar(@RequestBody Estoque estoque) {
-    estoqueService.salvarOuEditar(estoque);
+  public void edit(@RequestBody Estoque estoque) {
 
+    estoqueService.save(estoque);
   }
 
-  @ResponseStatus(HttpStatus.OK)
-  @GetMapping
-  public List<Estoque> buscarTodos() {
+  public List<Estoque> findAll() {
 
-    return estoqueService.buscarTodos();
+    return estoqueService.findAll();
   }
 
-  @ResponseStatus(HttpStatus.OK)
-  @GetMapping("/{id}")
-  public Estoque buscarPorId(@PathVariable Long id) {
-    return estoqueService.buscarPorId(id);
+  public Estoque findById(@PathVariable Long id) {
+
+    return estoqueService.findById(id);
   }
 
-  @DeleteMapping
-  public void deletar(Long id) {
-    estoqueService.excluir(id);
+  public void delete(Long id) {
 
+    estoqueService.delete(id);
   }
 }

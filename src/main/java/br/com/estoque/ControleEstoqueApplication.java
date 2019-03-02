@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ControleEstoqueApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ControleEstoqueApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(ControleEstoqueApplication.class, args);
+  }
 }
